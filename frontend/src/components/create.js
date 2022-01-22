@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 
 // Create a new animal
 export default function Create() {
-  
   // Initialize the form
   const [form, setForm] = useState({
     age: "",
@@ -26,12 +25,14 @@ export default function Create() {
   // Update the state properties
   function updateForm(value) {
     return setForm((prev) => {
+
       return { ...prev, ...value };
     });
   }
 
   // Handle form submission
   async function onSubmit(e) {
+
     e.preventDefault();
 
     // Add a new animal to the database
@@ -47,7 +48,7 @@ export default function Create() {
       window.alert(error);
       return;
     });
-    
+
     setForm({
       age: "",
       animal_type: "",
@@ -249,66 +250,30 @@ export default function Create() {
           </div>
         </div>
 
-        <div className="form-group">
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="reserved"
-              id="reseredTrue"
-              value="true"
-              checked={form.reserved === "true"}
-              onChange={(e) => updateForm({ reserved: e.target.value })}
-            />
-            <label htmlFor="true" className="form-check-label">
-              Resevered: True
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="reserved"
-              id="reservedFalse"
-              value="false"
-              checked={form.reserved === "false"}
-              onChange={(e) => updateForm({ reserved: e.target.value })}
-            />
-            <label htmlFor="false" className="form-check-label">
-              Reserved: False
-            </label>
-          </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="reserved"
+            value={form.reserved}
+            onChange={(e) => updateForm({ reserved: e.target.true })}
+          />
+          <label class="form-check-label" for="reserved">
+            Reserved
+          </label>
         </div>
 
-        <div className="form-group">
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="rescue_animal"
-              id="rescueTrue"
-              value="true"
-              checked={form.rescue_animal === "true"}
-              onChange={(e) => updateForm({ rescue_animal: e.target.value })}
-            />
-            <label htmlFor="true" className="form-check-label">
-              Search and Rescue Dog: True
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="rescue"
-              id="rescueFalse"
-              value="false"
-              checked={form.rescue_animal === "false"}
-              onChange={(e) => updateForm({ rescue_animal: e.target.value })}
-            />
-            <label htmlFor="false" className="form-check-label">
-              Search and Rescue Dog: False
-            </label>
-          </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="rescue"
+            value={form.rescue_animal}
+            onChange={(e) => updateForm({ rescue_animal: e.target.true })}
+          />
+          <label class="form-check-label" for="rescue">
+            Search and Rescue Animal
+          </label>
         </div>
 
         <div className="form-group">
