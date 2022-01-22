@@ -4,5 +4,9 @@
 
 This repository stores enhancements to a full stack application for my computer science capstone.
 
-Enhancement One: Set up the application. Configured the backend and middleware. Implemented form for frontend to test create function. 
+Enhancement One (1/22/2022): 
+-Structured the project
+-Configured the backend and middleware
+-Implemented the form to intake a new animal
+-Added front end navigation
 
