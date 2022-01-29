@@ -25,14 +25,12 @@ export default function Create() {
   // Update the state properties
   function updateForm(value) {
     return setForm((prev) => {
-
       return { ...prev, ...value };
     });
   }
 
   // Handle form submission
   async function onSubmit(e) {
-
     e.preventDefault();
 
     // Add a new animal to the database

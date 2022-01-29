@@ -11,7 +11,7 @@ export default function Navigation() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink className="navbar-brand" to="/">
-          <img style={{ width: 15 + "%" }} src={Logo}></img>
+          <img style={{ width: 15 + "%" }} src={Logo} alt="logo"></img>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -30,6 +30,11 @@ export default function Navigation() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/create">
                 Create Animal
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                Home
               </NavLink>
             </li>
           </ul>
