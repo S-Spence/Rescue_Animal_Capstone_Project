@@ -113,9 +113,7 @@ export default function Create() {
             <div className="form-group">
               <label htmlFor="age">Age (Years)</label>
               <input
-                type="number"
-                min="0"
-                max="30"
+                type="text"
                 className="form-control"
                 id="age"
                 value={form.age}

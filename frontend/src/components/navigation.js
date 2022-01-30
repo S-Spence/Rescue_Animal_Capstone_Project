@@ -28,28 +28,18 @@ export default function Navigation() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-            <li className="nav-item">
               <NavLink className="nav-link" to="/">
-                Home
+                Search and Rescue Animals
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/all">
+                All Animals
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to="/create">
                 Add Animal
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/water">
-                Water Rescue
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/mountain">
-                Mountain Rescue
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/disaster">
-                Disaster Rescue
               </NavLink>
             </li>
           </ul>

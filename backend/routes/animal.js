@@ -47,7 +47,7 @@ Routes.route("/animal/water").get(function (req, res) {
   db_connect
     .collection("animals")
     .find({
-      breed: ["Laborador Retriever", "Chesapeake Bay Retriever", "Newfoundland"], 
+      breed: {$in: ["Laborador Retriever", "Chesapeake Bay Retriever", "Newfoundland"]}, 
       gender: "Intact Female",
       age_weeks: {$gte: 26},
       age_weeks: {$lte: 156}
@@ -64,7 +64,7 @@ Routes.route("/animal/mountain").get(function (req, res) {
   db_connect
     .collection("animals")
     .find({
-      breed: ["German Shephard", "Alaskan Malamute", "Old English Sheepdog", "Siberian Husky", "Rottweiler"], 
+      breed: {$in: ["German Shephard", "Alaskan Malamute", "Old English Sheepdog", "Siberian Husky", "Rottweiler"]}, 
       gender: "Intact Male",
       age_weeks: {$gte: 26},
       age_weeks: {$lte: 156}
@@ -81,11 +81,23 @@ Routes.route("/animal/disaster").get(function (req, res) {
   db_connect
     .collection("animals")
     .find({
-      breed: ["German Shephard", "Doberman Pinscher", "Golden Retriever", "Bloodhound", "Rottweiler"], 
+      breed: {$in: ["German Shephard", "Doberman Pinscher", "Golden Retriever", "Bloodhound", "Rottweiler"]}, 
       gender: "Intact Male",
       age_weeks: {$gte: 20},
       age_weeks: {$lte: 300}
     })
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// Get all shelter animals
+Routes.route("/animal/all").get(function (req, res) {
+  let db_connect = db.getDb("RescueAnimals");
+  db_connect
+    .collection("animals")
+    .find({})
     .toArray(function (err, result) {
       if (err) throw err;
       res.json(result);
