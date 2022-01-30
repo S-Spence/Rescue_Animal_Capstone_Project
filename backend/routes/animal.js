@@ -10,12 +10,82 @@ const db = require("../database/connection");
 // This helps convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
-// Get a list of all animals
+// Get a list of all search and rescue dogs
 Routes.route("/animal").get(function (req, res) {
+  let db_connect = db.getDb("RescueAnimals");
+  let query = {$or: [
+    {
+    breed: {$in: ["Laborador Retriever", "Chesapeake Bay Retriever", "Newfoundland"]},
+    gender: "Intact Female",
+    age_weeks: {$gte: 26},
+    age_weeks: {$lte: 156}
+    },
+    {
+      breed: {$in: ["German Shephard", "Alaskan Malamute", "Old English Sheepdog", "Siberian Husky", "Rottweiler"]},
+      gender: "Intact Male",
+      age_weeks: {$gte: 26},
+      age_weeks: {$lte: 156}
+      },
+      {
+        breed: {$in: ["German Shephard", "Doberman Pinscher", "Golden Retriever", "Bloodhound", "Rottweiler"]},
+        gender: "Intact Male",
+        age_weeks: {$gte: 20},
+        age_weeks: {$lte: 300}
+        }]};
+  db_connect
+    .collection("animals")
+    .find(query).toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+
+// Get water rescue dogs
+Routes.route("/animal/water").get(function (req, res) {
   let db_connect = db.getDb("RescueAnimals");
   db_connect
     .collection("animals")
-    .find({})
+    .find({
+      breed: ["Laborador Retriever", "Chesapeake Bay Retriever", "Newfoundland"], 
+      gender: "Intact Female",
+      age_weeks: {$gte: 26},
+      age_weeks: {$lte: 156}
+    })
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// Get mountain rescue dogs
+Routes.route("/animal/mountain").get(function (req, res) {
+  let db_connect = db.getDb("RescueAnimals");
+  db_connect
+    .collection("animals")
+    .find({
+      breed: ["German Shephard", "Alaskan Malamute", "Old English Sheepdog", "Siberian Husky", "Rottweiler"], 
+      gender: "Intact Male",
+      age_weeks: {$gte: 26},
+      age_weeks: {$lte: 156}
+    })
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// Get disaster rescue dogs
+Routes.route("/animal/disaster").get(function (req, res) {
+  let db_connect = db.getDb("RescueAnimals");
+  db_connect
+    .collection("animals")
+    .find({
+      breed: ["German Shephard", "Doberman Pinscher", "Golden Retriever", "Bloodhound", "Rottweiler"], 
+      gender: "Intact Male",
+      age_weeks: {$gte: 20},
+      age_weeks: {$lte: 300}
+    })
     .toArray(function (err, result) {
       if (err) throw err;
       res.json(result);

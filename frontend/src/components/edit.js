@@ -14,7 +14,6 @@ export default function Edit() {
     location_lat: 0.0,
     location_long: 0.0,
     age_weeks: 0.0,
-    rescue_animal: false,
     reserved: false,
   });
   // Parameters
@@ -68,8 +67,7 @@ export default function Edit() {
       location_lat: form.location_lat,
       location_long: form.location_long,
       age_weeks: form.age_weeks,
-      rescue_animal: form.rescue_animal,
-      reserved: form.reserved,
+      reserved: form.reserved
     };
 
     // Update the database.
@@ -234,7 +232,7 @@ export default function Edit() {
               onChange={(e) => updateForm({ gender: e.target.value })}
             />
             <label htmlFor="typeUnspayedFemale" className="form-check-label">
-              Unspayed Female
+              Intact Female
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -262,7 +260,7 @@ export default function Edit() {
               onChange={(e) => updateForm({ gender: e.target.value })}
             />
             <label htmlFor="typeUnneuteredMale" className="form-check-label">
-              Unneutered Male
+              Intact Male
             </label>
           </div>
         </div>
@@ -280,18 +278,6 @@ export default function Edit() {
           </label>
         </div>
 
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="rescue"
-            value={form.rescue_animal}
-            onChange={(e) => updateForm({ rescue_animal: e.target.true })}
-          />
-          <label class="form-check-label" for="rescue">
-            Search and Rescue Animal
-          </label>
-        </div>
 
         <div className="form-group">
           <input
