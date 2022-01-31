@@ -17,6 +17,7 @@ export default function Create() {
     location_long: 0.0,
     age_weeks: 0.0,
     reserved: false,
+    image: "",
   });
 
   // Initialize navigation
@@ -59,6 +60,7 @@ export default function Create() {
       location_long: 0.0,
       age_weeks: 0.0,
       reserved: false,
+      image: "",
     });
     // Navigate back to the homepage after form submit
     navigate("/");
@@ -164,6 +166,18 @@ export default function Create() {
               />
             </div>
           </div>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="color">Image</label>
+          <input
+            type="text"
+            className="form-control"
+            id="image"
+            placeholder="Image URL"
+            value={form.image}
+            onChange={(e) => updateForm({ image: e.target.value })}
+          />
         </div>
         
         <div className="form-group">
@@ -314,6 +328,38 @@ export default function Create() {
             />
             <label htmlFor="typeEuthenasia" className="form-check-label">
               Euthenasia
+            </label>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <text>Reserved:</text> 
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="reservedOptions"
+              id="typeTrue"
+              value="True"
+              checked={form.reserved === "True"}
+              onChange={(e) => updateForm({ reserved: e.target.value })}
+            />
+            <label htmlFor="typeTrue" className="form-check-label">
+              True
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="reservedOptions"
+              id="typeFalse"
+              value="False"
+              checked={form.reserved === "False"}
+              onChange={(e) => updateForm({ reserved: e.target.value })}
+            />
+            <label htmlFor="typeFalse" className="form-check-label">
+              False
             </label>
           </div>
         </div>

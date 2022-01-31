@@ -133,8 +133,8 @@ Routes.route("/animal/add").post(function (req, response) {
     location_lat: req.body.location_lat,
     location_long: req.body.location_long,
     age_weeks: req.body.age_weeks,
-    rescue_animal: req.body.rescue_animal,
-    reserved: req.body.resrved,
+    reserved: req.body.reserved,
+    image: req.body.image,
   };
   // insert the new document into the animals collection
   db_connect.collection("animals").insertOne(new_animal, function (err, res) {
@@ -162,8 +162,8 @@ Routes.route("/update/:id").post(function (req, response) {
       location_lat: req.body.location_lat,
       location_long: req.body.location_long,
       age_weeks: req.body.age_weeks,
-      rescue_animal: req.body.rescue_animal,
-      reserved: req.body.resrved,
+      reserved: req.body.reserved,
+      image: req.body.image,
     },
   };
   // Update within collection
