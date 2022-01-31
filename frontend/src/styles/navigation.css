@@ -25,7 +25,9 @@
   text-decoration: none;
 }
 
+
 .navbar a:hover {
+  background-color: black;
   color: white;
 }
 
@@ -51,6 +53,7 @@
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   background-color: black;
+  color: white;
 }
 
 /* Dropdown content (hidden by default) */
@@ -67,15 +70,19 @@
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 16px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
 
+.dropdown-content a:visited {
+  color: inherit;
+}
+
 /* Change background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: black;
+  background-color: #D03D56;
   color: white;
 }
 
