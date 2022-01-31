@@ -1,0 +1,43 @@
+.form-body {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    border-radius: 10px;
+    border-color: maroon;
+    border-width: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+.form-body h3 {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.form-body text {
+    padding-right: 5px;
+    text-decoration: underline;
+}
+
+.form-body .form-group {
+    padding: 8px 15px;
+}
+
+.form-body .btn {
+    color: white;
+    background-color: maroon;
+    border-color: maroon;
+    border-radius: 8px;
+}
+
+.form-body .btn:hover{
+    background-color: #D03D56;
+    border-color: #D03D56;
+}

@@ -53,20 +53,6 @@ export default function AnimalList() {
 
   return (
     <div>
-      <div className="actions">
-        <button>
-          <Link to={"/"}>All Search and Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/water"}>Water Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/mountain"}>Moutain Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/disaster"}>Disaster Rescue</Link>
-        </button>
-      </div>
       <div className="header">
         <h3>All Search and Rescue Dogs</h3>
       </div>

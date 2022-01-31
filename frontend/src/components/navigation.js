@@ -4,40 +4,45 @@ import "bootstrap/dist/css/bootstrap.css";
 // import navlink
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/Grazioso_Salvare_Logo.png";
+import "../styles/navigation.css";
 
 // Display the navigation bar
 export default function Navigation() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
+      <nav className="navbar">
+        <NavLink className="navbar-logo" to="/">
           <img style={{ width: 15 + "%" }} src={Logo} alt="logo"></img>
         </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Search and Rescue Animals
-              </NavLink>
+        <div className="nav-elements">
+          <ul>
+            <li className="dropdown">
+              <button className="dropbtn">
+                Search and Rescue Dogs
+                <i className="fa fa-caret-down" />
+              </button>
+              <div className="dropdown-content">
+                <NavLink className="nav-link" to="/">
+                  All Search and Rescue
+                </NavLink>
+                <NavLink className="nav-link" to="/mountain">
+                  Mountain Rescue
+                </NavLink>
+                <NavLink className="nav-link" to="/water">
+                  Water Rescue
+                </NavLink>
+                <NavLink className="nav-link" to="/disaster">
+                  Disaster Rescue
+                </NavLink>
+              </div>
             </li>
-            <li className="nav-item">
+            <li>
               <NavLink className="nav-link" to="/all">
                 All Animals
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li>
               <NavLink className="nav-link" to="/create">
                 Add Animal
               </NavLink>

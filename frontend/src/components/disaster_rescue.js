@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Animal from "./animal_item";
 import "../styles/grid.css";
 
@@ -53,20 +52,6 @@ export default function AnimalList() {
 
   return (
     <div>
-      <div className="actions">
-        <button>
-          <Link to={"/"}>All Search and Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/water"}>Water Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/mountain"}>Moutain Rescue</Link>
-        </button>
-        <button>
-          <Link to={"/disaster"}>Disaster Rescue</Link>
-        </button>
-      </div>
       <div className="header">
         <h3>Disaster Rescue Dogs</h3>
       </div>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles/grid.css";
  
 const Animal = (props) => (
- 
+ // Create the table to display all animals
  <tr>
    <td>{props.animal.name}</td>
    <td>{props.animal.age}</td>
@@ -30,7 +31,7 @@ const Animal = (props) => (
 export default function AnimalList() {
  const [animals, setAnimals] = useState([]);
  
- // This method fetches the records from the database.
+ // This method fetches the animals from the database.
  useEffect(() => {
    async function getAnimals() {
      const response = await fetch(`http://localhost:5000/animal/all`);
@@ -60,7 +61,7 @@ export default function AnimalList() {
    setAnimals(newAnimals);
  }
  
- // This method will map out the records on the table
+ // This method will map out the animals on the table
  function animalList() {
    return animals.map((animal) => {
      return (
@@ -73,10 +74,12 @@ export default function AnimalList() {
    });
  }
  
- // This following section will display the table with the records of individuals.
+ // This following section will display the table with all animals
   return (
   <div>
-  <h3>Search and Rescue Dogs</h3>
+    <div className="header">
+      <h3>All Animals</h3>
+    </div>
   <table className="table table-striped" style={{ marginTop: 20 }}>
     <thead>
       <tr>
