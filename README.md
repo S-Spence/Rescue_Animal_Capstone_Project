@@ -15,5 +15,5 @@ Enhancement Two (1/30/2022):
 - Added a table to sort all animals
 
 
-Run ```npm install``` and ```npm start``' in both the backend and frontend folders.
+Run ```npm install``` and ```npm start``` in both the backend and frontend folders.
 Note: Make sure to start the backend server first. 
