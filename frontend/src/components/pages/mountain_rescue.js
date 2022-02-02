@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Animal from "./animal_item";
-import "../styles/grid.css";
+import Animal from "../ui/animal_item";
+import "../../styles/grid.css";
 
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
@@ -8,7 +8,7 @@ export default function AnimalList() {
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
-      const response = await fetch(`http://localhost:5000/animal/water`);
+      const response = await fetch(`http://localhost:5000/animal/mountain`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -37,7 +37,7 @@ export default function AnimalList() {
     window.location.reload(true);
   }
 
-  // This method will map out the animals to the cards
+  // This method will map the animals to the cards
   function animalList() {
     return animals.map((animal) => {
       return (
@@ -53,7 +53,7 @@ export default function AnimalList() {
   return (
     <div>
       <div className="header">
-        <h3>Water Rescue Dogs</h3>
+        <h3>Mountain Rescue Dogs</h3>
       </div>
       <div className="container">{animalList()}</div>
     </div>

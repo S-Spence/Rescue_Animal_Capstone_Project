@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Card from "./ui/card";
-import "../styles/animal.css";
+import Card from "./card";
+import "../../styles/animal.css";
 
 export default function Animal(props){
   
