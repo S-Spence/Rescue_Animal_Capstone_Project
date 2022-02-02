@@ -5,12 +5,12 @@ import { Route, Routes } from "react-router-dom";
 // Import components
 import Navigation from "./components/navigation";
 import Create from "./components/create";
-import RescueAnimals from "./components/rescue_animals";
+import RescueAnimals from "./components/pages/rescue_animals";
 import Edit from "./components/edit";
-import MountainRescue from "./components/mountain_rescue";
-import WaterRescue from "./components/water_rescue";
-import DisasterRescue from "./components/disaster_rescue";
-import AllAnimals from "./components/all_animals";
+import MountainRescue from "./components/pages/mountain_rescue";
+import WaterRescue from "./components/pages/water_rescue";
+import DisasterRescue from "./components/pages/disaster_rescue";
+import AllAnimals from "./components/pages/all_animals";
 
 const App = () => {
   return (

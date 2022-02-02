@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Animal from "./animal_item";
-import "../styles/grid.css";
+import Animal from "../ui/animal_item";
+import "../../styles/grid.css";
 
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);

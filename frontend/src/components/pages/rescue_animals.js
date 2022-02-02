@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Animal from "./animal_item";
-import "../styles/grid.css";
+import Animal from "../ui/animal_item";
+import "../../styles/grid.css";
+
 
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
@@ -35,7 +35,7 @@ export default function AnimalList() {
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
     // Refresh after delete
-    window.location.reload(true);
+   
   }
 
   // This method will map the animals to the cards
