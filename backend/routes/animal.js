@@ -136,7 +136,8 @@ Routes.route("/animal/add").post(function (req, response) {
     reserved: req.body.reserved,
     image: req.body.image,
   };
-  // insert the new document into the animals collection
+
+  // Insert the new document into the animals collection
   db_connect.collection("animals").insertOne(new_animal, function (err, res) {
     if (err) throw err;
     response.json(res);

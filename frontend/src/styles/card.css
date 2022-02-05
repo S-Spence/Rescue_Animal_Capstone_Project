@@ -4,11 +4,5 @@
     border-radius: 5px;
     border-width: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    
+    width: 360px;     
   }
-
-.card div{
-    flex-basis: fit-content;
-    flex-shrink: 1;
-}

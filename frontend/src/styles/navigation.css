@@ -1,17 +1,22 @@
 .navbar {
   background-color: black;
   font-family: arial;
+  display: flex;
 }
 
 .navbar-logo img {
   position: left;
   padding-left: 20px;
   height: fit-content;
+  display: inline;
+  width: 100px;
 }
 
 .navbar ul {
   list-style-type: none; /* Remove bullets */
   padding-right: 20px;
+  padding-left: 100px;
+  width: fit-content;
 }
 
 .navbar li {
@@ -49,7 +54,6 @@
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   background-color: black;
@@ -89,4 +93,11 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+@media screen and (max-width:1270px){
+
+
+
 }

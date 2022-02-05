@@ -13,9 +13,8 @@ export default function Navigation() {
       <nav className="navbar">
         <NavLink className="navbar-logo" to="/">
           <img style={{ width: 15 + "%" }} src={Logo} alt="logo"></img>
-        </NavLink>
-
-        <div className="nav-elements">
+          </NavLink>
+        
           <ul>
             <li className="dropdown">
               <button className="dropbtn">
@@ -48,7 +47,6 @@ export default function Navigation() {
               </NavLink>
             </li>
           </ul>
-        </div>
       </nav>
     </div>
   );

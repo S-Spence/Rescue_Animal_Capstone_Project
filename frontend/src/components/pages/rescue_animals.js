@@ -34,7 +34,6 @@ export default function AnimalList() {
 
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
-    // Refresh after delete
    
   }
 
@@ -50,7 +49,7 @@ export default function AnimalList() {
       );
     });
   }
-
+  // Return the card with the rescue animals
   return (
     <div>
       <div className="header">
