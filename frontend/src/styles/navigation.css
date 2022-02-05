@@ -95,9 +95,8 @@
   display: block;
 }
 
-
+/*TODO: Fix media queries for smaller screens with nav*/
 @media screen and (max-width:1270px){
-
 
 
 }

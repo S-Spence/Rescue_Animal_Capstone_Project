@@ -25,16 +25,20 @@ export default function Animal(props){
             <h4>Reserved: {props.animal.reserved}</h4>
         </div>
         <div className="actions">
-            <button className="btn btn-link">
-                <Link to={`/edit/${props.animal._id}`}>Edit</Link>
-            </button>
-            <button className="btn btn-link"
-                onClick={() => {
-                props.deleteAnimal(props.animal._id);
-                }}
-            >
-            Delete
-            </button>
+            <div className="edit">
+              <button className="btn btn-link">
+                  <Link to={`/edit/${props.animal._id}`}>Edit</Link>
+              </button>
+            </div>
+            <div className="delete">
+              <button className="btn btn-link"
+                  onClick={() => {
+                  props.deleteAnimal(props.animal._id);
+                  }}
+              >
+              Delete
+              </button>
+            </div>
         </div>
     </Card>
       
