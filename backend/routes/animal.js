@@ -123,7 +123,7 @@ Routes.route("/animal/add").post(function (req, response) {
   let db_connect = db.getDb();
   // Set animal parameters
   let new_animal = {
-    age: req.body.age,
+    age: `${req.body.age} Years`,
     animal_type: req.body.animal_type,
     breed: req.body.breed,
     color: req.body.color,
@@ -153,7 +153,7 @@ Routes.route("/update/:id").post(function (req, response) {
   // Update values
   let new_values = {
     $set: {
-      age: req.body.age,
+      age: `${req.body.age} Years`,
       animal_type: req.body.animal_type,
       breed: req.body.breed,
       color: req.body.color,

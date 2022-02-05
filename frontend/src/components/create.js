@@ -47,7 +47,7 @@ export default function Create() {
       window.alert(error);
       return;
     });
-
+    // Default values
     setForm({
       age: "",
       animal_type: "",
@@ -76,8 +76,11 @@ export default function Create() {
           <label htmlFor="name">Name</label>
           <input
             type="text"
+            minlength= "1"
+            maxlength="40"
             className="form-control"
             id="name"
+            placeholder="Enter Name"
             value={form.name}
             onChange={(e) => updateForm({ name: e.target.value })}
           />
@@ -87,8 +90,11 @@ export default function Create() {
           <label htmlFor="breed">Breed</label>
           <input
             type="text"
+            minlength= "1"
+            maxlength="75"
             className="form-control"
             id="breed"
+            placeholder="Enter Breed"
             value={form.breed}
             onChange={(e) => updateForm({ breed: e.target.value })}
           />
@@ -98,8 +104,11 @@ export default function Create() {
           <label htmlFor="color">Color</label>
           <input
             type="text"
+            minlenth="1"
+            maxlength="20"
             className="form-control"
             id="color"
+            placeholder="Enter Color"
             value={form.color}
             onChange={(e) => updateForm({ color: e.target.value })}
           />
@@ -108,12 +117,15 @@ export default function Create() {
         <div className="row">
           <div className="col">
             <div className="form-group">
-              <label htmlFor="age">Age (Years)</label>
+              <label htmlFor="age">Age (Years or Months)</label>
               <input
-                type="text"
+                type="input"
+                step="0.01"
                 className="form-control"
+                minlength="7"
+                maxlength="8"
                 id="age"
-                placeholder="Enter in format '# years'"
+                placeholder="Enter 'x Years' or 'x Months'"
                 value={form.age}
                 onChange={(e) => updateForm({ age: e.target.value })}
               />
@@ -125,6 +137,7 @@ export default function Create() {
               <input
                 type="number"
                 id="age_weeks"
+                placeholder="Enter Age in Weeks"
                 className="form-control"
                 value={form.age_weeks}
                 onChange={(e) =>
@@ -141,7 +154,9 @@ export default function Create() {
               <label htmlFor="location_lat">Location (Latitude)</label>
               <input
                 type="number"
-                step="0.0000001"
+                step="0.000000000000001"
+                min="-90"
+                max="90"
                 className="form-control"
                 id="location_lat"
                 value={form.location_lat}
@@ -156,7 +171,9 @@ export default function Create() {
               <label htmlFor="location_long">Location (Longitude)</label>
               <input
                 type="number"
-                step="0.0000001"
+                step="0.000000000000001"
+                min="-180"
+                max="180"
                 className="form-control"
                 id="location_long"
                 value={form.location_long}
@@ -171,10 +188,11 @@ export default function Create() {
         <div className="form-group">
           <label htmlFor="color">Image</label>
           <input
-            type="text"
+            type="url"
+            pattern="https://.*"
             className="form-control"
             id="image"
-            placeholder="Image URL"
+            placeholder="Enter an Image URL"
             value={form.image}
             onChange={(e) => updateForm({ image: e.target.value })}
           />

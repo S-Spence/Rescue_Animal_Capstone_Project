@@ -15,5 +15,16 @@ Enhancement Two (1/30/2022):
 - Added a table to sort all animals
 
 
+Enhancement Three (2/5/2022):
+- Added endpoint testing using jest-mongodb and Mongo Memory Server
+- Improved styling for buttons on cards
+- Added input validation to forms
+
+
 Run ```npm install``` and ```npm start``` in both the backend and frontend folders.
+
+
 Note: Make sure to start the backend server first. 
+
+
+There are some automated tests for the database in the backend folder. To run these tests, cd into the backend folder and run ```npm test```

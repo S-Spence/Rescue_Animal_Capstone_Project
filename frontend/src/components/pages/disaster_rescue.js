@@ -5,17 +5,17 @@ import "../../styles/grid.css";
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
 
-  // Fetch the animal from the database
+  // Fetch the disaster rescue animals from the database
   useEffect(() => {
     async function getAnimals() {
       const response = await fetch(`http://localhost:5000/animal/disaster`);
-
+      // Error handling
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
         window.alert(message);
         return;
       }
-
+      // Get the animals
       const animals = await response.json();
       setAnimals(animals);
     }
