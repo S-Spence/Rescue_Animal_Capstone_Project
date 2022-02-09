@@ -49,7 +49,7 @@ export default function AnimalList() {
     <div className="header">
       <h3>All Animals</h3>
     </div>
-    <div className="container">
+    <div className="body">
       <div className="ag-theme-alpine" style={{height: 700, width: 1200}}>
               <AgGridReact
                   rowData={animals}
