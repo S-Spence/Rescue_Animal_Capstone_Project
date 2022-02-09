@@ -13,40 +13,39 @@ export default function Navigation() {
       <nav className="navbar">
         <NavLink className="navbar-logo" to="/">
           <img style={{ width: 15 + "%" }} src={Logo} alt="logo"></img>
-          </NavLink>
-        
-          <ul>
-            <li className="dropdown">
-              <button className="dropbtn">
-                Search and Rescue Dogs
-                <i className="fa fa-caret-down" />
-              </button>
-              <div className="dropdown-content">
-                <NavLink className="nav-link" to="/">
-                  All Search and Rescue
-                </NavLink>
-                <NavLink className="nav-link" to="/mountain">
-                  Mountain Rescue
-                </NavLink>
-                <NavLink className="nav-link" to="/water">
-                  Water Rescue
-                </NavLink>
-                <NavLink className="nav-link" to="/disaster">
-                  Disaster Rescue
-                </NavLink>
-              </div>
-            </li>
-            <li>
-              <NavLink className="nav-link" to="/all">
-                All Animals
+        </NavLink>
+        <ul>
+          <li className="dropdown">
+            <button className="dropbtn">
+              Search and Rescue Dogs
+              <i className="fa fa-caret-down" />
+            </button>
+            <div className="dropdown-content">
+              <NavLink className="nav-link" to="/">
+                All Search and Rescue
               </NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-link" to="/create">
-                Add Animal
+              <NavLink className="nav-link" to="/mountain">
+                Mountain Rescue
               </NavLink>
-            </li>
-          </ul>
+              <NavLink className="nav-link" to="/water">
+                Water Rescue
+              </NavLink>
+              <NavLink className="nav-link" to="/disaster">
+                Disaster Rescue
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <NavLink className="nav-link" to="/all">
+              All Animals
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-link" to="/create">
+              Add Animal
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </div>
   );

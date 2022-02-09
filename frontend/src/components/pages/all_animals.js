@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/grid.css";
+import "../../styles/table.css";
  
 const Animal = (props) => (
  // Create the table to display all animals

@@ -2,21 +2,19 @@
   background-color: black;
   font-family: arial;
   display: flex;
+  flex-wrap: nowrap;
 }
 
 .navbar-logo img {
   position: left;
   padding-left: 20px;
   height: fit-content;
-  display: inline;
   width: 100px;
 }
 
 .navbar ul {
   list-style-type: none; /* Remove bullets */
   padding-right: 20px;
-  padding-left: 100px;
-  width: fit-content;
 }
 
 .navbar li {
@@ -30,6 +28,10 @@
   text-decoration: none;
 }
 
+.navbar a:visited,
+a:active {
+  color: white;
+}
 
 .navbar a:hover {
   background-color: black;
@@ -79,14 +81,14 @@
   display: block;
   text-align: left;
 }
-
+/* Keep color the same after visiting dropdown item */
 .dropdown-content a:visited {
   color: inherit;
 }
 
 /* Change background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #D03D56;
+  background-color: #d03d56;
   color: white;
 }
 
@@ -95,8 +97,30 @@
   display: block;
 }
 
-/*TODO: Fix media queries for smaller screens with nav*/
-@media screen and (max-width:1270px){
+/* Screens below 1250px */
+@media screen and (max-width: 1250px) {
+  .navbar-logo img {
+    align-self: left;
+    margin-right: 100%;
+    justify-content: left;
+    object-fit: cover;
+    min-width: 100px;
+    flex: 0 0 150px;
+  }
 
+  .navbar ul {
+    list-style-type: none; /* Remove bullets */
+    white-space: nowrap;
+    align-self: right;
+    justify-content: right;
+  }
 
+  .navbar a {
+    display: flex;
+    flex-direction: column-reverse;
+    white-space: nowrap;
+    align-items: right;
+    justify-content: right;
+    margin-right: 0;
+  }
 }
