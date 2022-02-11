@@ -88,7 +88,7 @@ export default function Edit() {
   return (
     <div>
       <form className="form-body" onSubmit={onSubmit}>
-        <h3>Add New Animal</h3>
+        <h3>Edit Animal</h3>
 
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -403,7 +403,7 @@ export default function Edit() {
         <div className="form-group">
           <input
             type="submit"
-            value="Create animal"
+            value="Edit animal"
             className="btn btn-primary"
           />
         </div>

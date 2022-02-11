@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -42,7 +42,8 @@ export default function AnimalList() {
   { field: 'age_weeks', filter:true, resizable: true, editable: true },
   { field: 'reserved', filter:true, resizable: true, editable: true}
 ])
- 
+
+
  // This following section will display the table with all animals
   return (
   <div>
@@ -53,7 +54,10 @@ export default function AnimalList() {
       <div className="ag-theme-alpine" style={{height: 700, width: 1200}}>
               <AgGridReact
                   rowData={animals}
-                  columnDefs={columns}>
+                  columnDefs={columns}
+                  pagination={true}
+                  paginationPageSize={14}
+                  >   
               </AgGridReact>
       </div>
     </div>
