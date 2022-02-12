@@ -5,6 +5,7 @@ import "../../styles/grid.css";
 export default function AnimalList() {
   const [animals, setAnimals] = useState([]);
 
+  
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
@@ -15,7 +16,7 @@ export default function AnimalList() {
         window.alert(message);
         return;
       }
-
+      // set animals
       const animals = await response.json();
       setAnimals(animals);
     }
@@ -30,11 +31,11 @@ export default function AnimalList() {
     await fetch(`http://localhost:5000/${id}`, {
       method: "DELETE",
     });
-
+    // Set new animals
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
-    // Refresh after delete
-    window.location.reload(true);
+    // Refresh page
+    window.location.reload();
   }
 
   // This method will map the animals to the cards

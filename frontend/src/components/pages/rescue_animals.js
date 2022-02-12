@@ -9,6 +9,7 @@ export default function AnimalList() {
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
+     
       const response = await fetch(`http://localhost:5000/animal`);
 
       if (!response.ok) {
@@ -16,7 +17,7 @@ export default function AnimalList() {
         window.alert(message);
         return;
       }
-
+      // Set animals
       const animals = await response.json();
       setAnimals(animals);
     }
@@ -31,9 +32,11 @@ export default function AnimalList() {
     await fetch(`http://localhost:5000/${id}`, {
       method: "DELETE",
     });
-
+    // Set new animals
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
+    // Reload page
+    window.location.reload();
    
   }
 

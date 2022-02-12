@@ -36,9 +36,9 @@ export default function AnimalList() {
   { field: 'breed', filter:true, resizable: true, editable: true },
   { field: 'color', filter:true, resizable:true, editable:true  },
   { field: 'outcome_type', filter:true, resizable:true, editable: true },
-  { field: 'gender', filter:true, resiable:true, editable: true },
+  { field: 'gender', filter:true, resizable:true, editable: true },
   { field: 'location_lat', filter:true, resizable: true, editable: true},
-  { field: 'location_long', filter: true, resiable:true, editable:true },
+  { field: 'location_long', filter: true, resizable:true, editable:true },
   { field: 'age_weeks', filter:true, resizable: true, editable: true },
   { field: 'reserved', filter:true, resizable: true, editable: true}
 ])

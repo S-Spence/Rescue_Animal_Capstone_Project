@@ -117,15 +117,14 @@ export default function Create() {
         <div className="row">
           <div className="col">
             <div className="form-group">
-              <label htmlFor="age">Age (Years or Months)</label>
+              <label htmlFor="age">Age (Years)</label>
               <input
-                type="input"
-                step="0.01"
+                type="number"
                 className="form-control"
-                minlength="7"
-                maxlength="8"
+                min="0"
+                max="25"
                 id="age"
-                placeholder="Enter 'x Years' or 'x Months'"
+                placeholder="Enter Age"
                 value={form.age}
                 onChange={(e) => updateForm({ age: e.target.value })}
               />

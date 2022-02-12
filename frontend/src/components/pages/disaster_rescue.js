@@ -30,11 +30,11 @@ export default function AnimalList() {
     await fetch(`http://localhost:5000/${id}`, {
       method: "DELETE",
     });
-
+    // Set new animals
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
-    // Refresh after delete
-    window.location.reload(true);
+    // Refresh page
+    window.location.reload();
   }
 
   // This method will map out the animals to the cards

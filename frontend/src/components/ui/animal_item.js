@@ -6,11 +6,19 @@ export default function Animal(props){
   
   let image = "";
 
+  // Set default image if none provided
   if (props.animal.image != null && props.animal.image.length > 0){
     image = props.animal.image;
   }
   else{
     image = "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_Retriever_Dukedestiny01_drvd.jpg";
+  }
+  
+  // Remove animal and reload page
+  function remove(){
+      props.deleteAnimal(props.animal._id);
+      window.location.reload();
+
   }
   return (
      <Card>
@@ -32,9 +40,7 @@ export default function Animal(props){
             </div>
             <div className="delete">
               <button className="btn btn-link"
-                  onClick={() => {
-                  props.deleteAnimal(props.animal._id);
-                  }}
+                  onClick={()=> remove()}
               >
               Delete
               </button>
