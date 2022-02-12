@@ -10,6 +10,11 @@ const db = require("../database/connection");
 // This helps convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
+app.all('/animal', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next()
+});
 // Get a list of all search and rescue dogs
 Routes.route("/animal").get(function (req, res) {
   let db_connect = db.getDb("RescueAnimals");
