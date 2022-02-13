@@ -7,13 +7,15 @@ This full-stack application to manage search and rescue animals was my capstone 
 
 ### Usage
 
-Run ```npm install``` and ```npm start``` in both the backend and frontend folders.
+Production Mode: Run ```npm start``` at the top level of the project. Then, access localhost:5000. 
 
+Development Mode: Switch to development mode by changing the environment variable in the config.env to 'development'. Then, Run ```npm install``` and ```npm start``` at the top level and in the frontend folder. This will use ports 3000 and 5000 for frontend and backend. Note: Make sure to start the backend server first. 
 
-Note: Make sure to start the backend server first. 
+To push changes to github, ```git push origin```.
 
+To push changes to heroku, ```git push heroku main```.
 
-There are some automated tests for the database in the backend folder. To run these tests, cd into the backend folder and run ```npm test```
+There are also some automated tests for the database in the backend folder. To run these tests, cd into the backend folder and run ```npm test```.
 
 
 ### Inclusion and Enhancements
