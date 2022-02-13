@@ -8,6 +8,8 @@ This full-stack application to manage search and rescue animals was my capstone 
 
 ### Usage
 
+Follow the instructions in config.txt to set the environment variables.
+
 Production Mode: Run ```npm start``` at the top level of the project. Then, access localhost:5000. 
 
 Development Mode: Switch to development mode by changing the environment variable in the config.env to 'development'. Then, Run ```npm install``` and ```npm start``` at the top level and in the frontend folder. This will use ports 3000 and 5000 for frontend and backend. Note: Make sure to start the backend server first. 
