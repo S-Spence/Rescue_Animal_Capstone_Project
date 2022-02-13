@@ -10,7 +10,7 @@ export default function AnimalList() {
   useEffect(() => {
     async function getAnimals() {
      
-      const response = await fetch(`http://localhost:5000/animal`);
+      const response = await fetch(`/animal`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -29,7 +29,7 @@ export default function AnimalList() {
 
   // This method will delete an animal
   async function deleteAnimal(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`/${id}`, {
       method: "DELETE",
     });
     // Set new animals

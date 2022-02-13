@@ -8,7 +8,7 @@ export default function AnimalList() {
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
-      const response = await fetch(`http://localhost:5000/animal/water`);
+      const response = await fetch(`/animal/water`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -27,7 +27,7 @@ export default function AnimalList() {
 
   // This method will delete an animal
   async function deleteAnimal(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`/${id}`, {
       method: "DELETE",
     });
     // set new animals

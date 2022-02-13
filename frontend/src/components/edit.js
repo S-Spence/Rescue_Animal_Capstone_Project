@@ -26,7 +26,7 @@ export default function Edit() {
     async function fetchData() {
       const id = params.id.toString();
       const response = await fetch(
-        `http://localhost:5000/animal/${params.id.toString()}`
+        `/animal/${params.id.toString()}`
       );
 
       if (!response.ok) {
@@ -73,7 +73,7 @@ export default function Edit() {
     };
 
     // Update the database.
-    await fetch(`http://localhost:5000/update/${params.id}`, {
+    await fetch(`/update/${params.id}`, {
       method: "POST",
       body: JSON.stringify(editedAnimal),
       headers: {

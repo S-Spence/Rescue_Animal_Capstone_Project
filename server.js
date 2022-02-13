@@ -18,6 +18,12 @@ app.use(require("./backend/routes/animal"));
 // Get the driver connection
 const db = require("./backend/database/connection");
 
+app.all('/animal', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next()
+});
+
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join(__dirname, "/frontend/build")));
   app.get("*", (req, res) => {
@@ -28,7 +34,6 @@ if(process.env.NODE_ENV === "production"){
     res.send("Api running");
   });
 }
-
 
 app.listen(port, () => {
   // perform a database connection when server starts

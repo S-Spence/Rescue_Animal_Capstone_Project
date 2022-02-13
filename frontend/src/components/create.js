@@ -37,7 +37,7 @@ export default function Create() {
     // Add a new animal to the database
     const newAnimal = { ...form };
     // Post request to db
-    await fetch("http://localhost:5000/animal/add", {
+    await fetch("/animal/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

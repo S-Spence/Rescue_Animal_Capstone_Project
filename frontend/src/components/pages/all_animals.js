@@ -12,7 +12,7 @@ export default function AnimalList() {
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
-      const response = await fetch(`http://localhost:5000/animal/all`);
+      const response = await fetch(`/animal/all`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;

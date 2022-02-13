@@ -6,6 +6,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: auto;
     justify-items: center;
+    padding-bottom: 100px;
   }
 
 .header h3 {
