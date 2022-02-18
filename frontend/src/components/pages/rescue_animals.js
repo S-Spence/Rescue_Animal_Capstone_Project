@@ -9,8 +9,13 @@ export default function AnimalList() {
   // This method fetches the animals from the database.
   useEffect(() => {
     async function getAnimals() {
-     
-      const response = await fetch(`/animal`);
+      let response = ""
+      if(process.env.NODE_ENV === "production"){
+        response = await fetch(`/animal`);
+      }
+      else{
+        response = await fetch("http://localhost:5000/animal")
+      }
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;
@@ -29,14 +34,22 @@ export default function AnimalList() {
 
   // This method will delete an animal
   async function deleteAnimal(id) {
-    await fetch(`/${id}`, {
-      method: "DELETE",
-    });
+    if(process.env.NODE_ENV === "production"){
+      await fetch(`/${id}`, {
+        method: "DELETE",
+      });
+
+    }
+    else{
+      await fetch(`http://localhost:5000/${id}`, {
+        method: "DELETE",
+      });
+    }
     // Set new animals
     const newAnimals = animals.filter((el) => el._id !== id);
     setAnimals(newAnimals);
     // Reload page
-    window.location.reload();
+    window.location.reload(true);
    
   }
 

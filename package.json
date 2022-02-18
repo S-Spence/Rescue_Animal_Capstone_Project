@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build --prefix frontend",
+    "install-client": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client",
     "server": "nodemon server.js"
   },
   "engines": {

@@ -37,16 +37,29 @@ export default function Create() {
     // Add a new animal to the database
     const newAnimal = { ...form };
     // Post request to db
-    await fetch("/animal/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newAnimal),
-    }).catch((error) => {
-      window.alert(error);
-      return;
-    });
+    if(process.env.NODE_ENV === "production"){
+      await fetch("/animal/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAnimal),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
+    }else{
+      await fetch("http://localhost:5000/animal/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAnimal),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
+    }
     // Default values
     setForm({
       age: "",
@@ -64,6 +77,7 @@ export default function Create() {
     });
     // Navigate back to the homepage after form submit
     navigate("/");
+    window.location.reload(true);
   }
 
   // Display the form to collect all value and submit

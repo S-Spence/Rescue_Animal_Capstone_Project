@@ -25,9 +25,14 @@ export default function Edit() {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString();
-      const response = await fetch(
-        `/animal/${params.id.toString()}`
-      );
+
+      let response = ""
+      if(process.env.NODE_ENV === "production"){
+        response = await fetch(`/animal/${params.id.toString()}`);
+      }
+      else{
+        response = await fetch(`http://localhost:5000/animal/${params.id.toString()}`);
+      }
 
       if (!response.ok) {
         const message = `An error has occured: ${response.statusText}`;
@@ -73,15 +78,28 @@ export default function Edit() {
     };
 
     // Update the database.
-    await fetch(`/update/${params.id}`, {
-      method: "POST",
-      body: JSON.stringify(editedAnimal),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    if(process.env.NODE_ENV === "production"){
+      await fetch(`/update/${params.id}`, {
+        method: "POST",
+        body: JSON.stringify(editedAnimal),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    else{
+      await fetch(`http://localhost:5000/update/${params.id}`, {
+        method: "POST",
+        body: JSON.stringify(editedAnimal),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    
     // Naviagte back to search grid
     navigate("/");
+    window.location.reload(true);
   }
 
   // Display the form to update animal information

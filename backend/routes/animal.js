@@ -150,10 +150,15 @@ Routes.route("/update/:id").post(function (req, response) {
   let db_connect = db.getDb();
   // Get query by object ID
   let query = { _id: ObjectId(req.params.id) };
+  new_age = req.body.age;
+  if(req.body.age.length < 7){
+    new_age = `${req.body.age} Years`;
+  }
+
   // Update values
   let new_values = {
     $set: {
-      age: `${req.body.age} Years`,
+      age: new_age,
       animal_type: req.body.animal_type,
       breed: req.body.breed,
       color: req.body.color,
