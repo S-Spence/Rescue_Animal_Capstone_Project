@@ -15,7 +15,7 @@ export default function Animal(props){
   }
   
   // Remove animal and reload page
-  function remove(){
+  function remove(props){
       props.deleteAnimal(props.animal._id);
       window.location.reload();
 
