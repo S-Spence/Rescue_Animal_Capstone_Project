@@ -4,7 +4,7 @@
 
 This full-stack application to manage search and rescue animals was my capstone project for my undergraduate program. This project enhanced an [application](https://github.com/S-Spence/Rescue_Animal_Search_Dashboard "Rescue Animal Project") developed in my junior year. The original project utilized MongoDB for the database, PyMongo for the middleware, and Dash for the user interface. The artifact allows Grazioso Salvare’s staff to filter rescue animals by compatible rescue types, including water, mountain, and disaster rescues. The project also included unit tests for the CRUD module. The program did not allow users to update animal information, reserve animals for a search mission, intake an animal, or remove an animal from the database. I enhanced this project by converting it to a more popular and scalable full-stack framework (MERN). I also added additional features to help with database management. 
 
-[Heroku Deployment](https://rescue-animal-capstone.herokuapp.com/ "Production build")[Down as of Nov 2022 because Heroku removed the free-tier for app hosting. New deployment coming soon]
+[Heroku Deployment](https://rescue-animal-capstone.herokuapp.com/ "Production build") [Down as of Nov 2022 because Heroku removed the free-tier for app hosting. New deployment coming soon.]
 
 ### Usage
 
